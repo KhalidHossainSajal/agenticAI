@@ -5,3 +5,15 @@
 html, body, #root {
   height: 100%;
 }
+
+@layer components {
+  .axle-input {
+    @apply w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500;
+  }
+  .axle-btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60;
+  }
+  .axle-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 disabled:opacity-60;
+  }
+}

@@ -3,6 +3,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { env } from './config/env';
 import healthRouter from './routes/health';
+import authRouter from './routes/auth';
+import businessesRouter from './routes/businesses';
 import { errorHandler, notFoundHandler } from './middleware/error';
 
 export function createApp(): express.Express {
@@ -14,6 +16,8 @@ export function createApp(): express.Express {
   app.use(express.json({ limit: '1mb' }));
 
   app.use('/api/health', healthRouter);
+  app.use('/api/auth', authRouter);
+  app.use('/api/businesses', businessesRouter);
 
   app.use(notFoundHandler);
   app.use(errorHandler);

@@ -54,11 +54,21 @@ async function listMigrationFiles(): Promise<string[]> {
   return entries.filter((f) => f.endsWith('.sql')).sort();
 }
 
-function splitStatements(sql: string): string[] {
+function stripLineComments(sql: string): string {
   return sql
+    .split(/\r?\n/)
+    .map((line) => {
+      const idx = line.indexOf('--');
+      return idx === -1 ? line : line.slice(0, idx);
+    })
+    .join('\n');
+}
+
+function splitStatements(sql: string): string[] {
+  return stripLineComments(sql)
     .split(/;\s*(?:\r?\n|$)/g)
     .map((s) => s.trim())
-    .filter((s) => s.length > 0 && !/^--/.test(s));
+    .filter((s) => s.length > 0);
 }
 
 async function applyOne(
