@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Env
+.env
+.env.*
+!.env.example
+api/.env
+api/.env.*
+!api/.env.example
+web/.env
+web/.env.*
+!web/.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Coverage
+coverage/
+.nyc_output/
+
+# MySQL local data (if a host volume is ever created)
+mysql_data/
+
+# Vite cache
+web/.vite/
+
+# Test artefacts
+.cache/
