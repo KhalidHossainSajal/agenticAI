@@ -15,7 +15,16 @@ The full product vision and phase roadmap live in [`docs/AXLE-2.0.md`](./docs/AX
 
 ## Local development
 
-This repository is a clean Phase 0 foundation. Two services run side by side:
+This repository is a clean Phase 0 foundation. Two services run side by side on the Windows host:
+
+```text
+Windows Host
+├── Node.js API        (Express, port 3000)
+├── React / Vite Web   (port 5173)
+└── MySQL 8.4          (port 3306)
+```
+
+Docker is **not** required and is **not** part of the local development path. It is reintroduced in Phase 15 (Hostinger production deployment).
 
 | Service | Tech            | Port | Folder  |
 |---------|-----------------|------|---------|
@@ -23,7 +32,7 @@ This repository is a clean Phase 0 foundation. Two services run side by side:
 | Web     | Vite + React    | 5173 | `web/`  |
 | Database| MySQL 8.4       | 3306 | host    |
 
-> Docker / docker-compose are **not** part of Phase 0. Local dev runs on the host.
+> MySQL 8.4 is the official local database. No PostgreSQL, no MariaDB.
 
 ### Prerequisites
 

@@ -17,16 +17,17 @@ You need:
 
 - Node.js 20+ (tested on 22.23.1)
 - npm 10+
-- MySQL 8.4 reachable at the URL in `.env`
+- **MySQL 8.4** reachable at the URL in `api/.env`. MariaDB is **not** an acceptable substitute.
 
 Verify with:
 
 ```powershell
 node --version
 npm --version
-# Confirm MySQL:
-mysql -h 127.0.0.1 -P 3306 -u root -p -e "SELECT VERSION();"
+& "C:\Program Files\MySQL\MySQL Server 8.4\bin\mysql.exe" -h 127.0.0.1 -P 3306 -u root -p -e "SELECT VERSION();"
 ```
+
+The expected result is `8.4.x` (e.g. `8.4.11`) and the `@@version_comment` should be `MySQL Community Server - GPL`.
 
 ## Daily loop
 

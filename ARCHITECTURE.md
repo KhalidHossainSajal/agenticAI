@@ -8,7 +8,7 @@ Phase 0 establishes only the foundation:
 
 - `api/` exposes `GET /api/health` and `GET /api/health/db`.
 - `web/` renders a health page that calls both endpoints.
-- MySQL 8.4 is the system of record (no ORM, no pgvector).
+- **MySQL 8.4** is the system of record (no ORM, no pgvector, no external vector DB).
 - A custom migration runner applies `database/migrations/*.sql` in order, tracking state in a `schema_migrations` table.
 
 Nothing else exists yet. Do not add tables, routes, or UI for future phases.
